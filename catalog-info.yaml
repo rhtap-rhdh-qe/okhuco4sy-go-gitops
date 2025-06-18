@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: okhuco4sy-go-gitops
+  description: This is GitOps manifest for okhuco4sy-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=okhuco4sy-go
+    backstage.io/kubernetes-id: okhuco4sy-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: okhuco4sy-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:okhuco4sy-go
